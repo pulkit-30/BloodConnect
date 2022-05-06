@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 app.use(express.json());
+app.use(cors());
 // DB_connection
 const db_connect = require('./connection/db_connect');
 db_connect();

@@ -1,3 +1,4 @@
+const search = require('./router/search');
 const auth = require('./router/auth');
 
 /**
@@ -10,6 +11,11 @@ const routes = (app) => {
    * path : /api/auth
    */
   app.use('/api/auth', auth);
+  /**
+   * Search Query
+   * path : /api/search
+   */
+  app.use('/api/search', search);
 };
 
 module.exports = routes;

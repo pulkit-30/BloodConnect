@@ -2,9 +2,8 @@ const mongoose = require('mongoose');
 //defining the User Schema
 const UserSchema = new mongoose.Schema(
   {
-    isOrganization: {
-      type: Boolean,
-      default: false,
+    bloodGroup: {
+      type: String,
     },
     username: {
       type: String,
@@ -19,6 +18,18 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
       minlength: 8,
+    },
+    course: {
+      type: String,
+    },
+    branch: {
+      type: String,
+    },
+    phoneNumber: {
+      type: String,
+    },
+    admissionNumber: {
+      type: String,
     },
   },
   { timestamps: true }
