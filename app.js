@@ -7,9 +7,10 @@ app.use(cors());
 const db_connect = require('./connection/db_connect');
 db_connect();
 
-// app.get('/', (req, res) => {
-//   res.send('Hello');
-// });
+app.get('/', (req, res) => {
+  res.send('Hello');
+});
+
 // App Routes
 const Routes = require('./Router');
 Routes(app);

@@ -1,11 +1,9 @@
 <div align="center">
   
-## Blood Connect
+# Blood Connect
 
 <img src="https://user-images.githubusercontent.com/76155456/167152740-c65ab08b-ae0a-4fc0-9c6c-31a039e669d9.png" width="400px" />
 </div>
-
-
 
 #### Steps to SetUp
 

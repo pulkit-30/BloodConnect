@@ -9,7 +9,6 @@ const bcrypt = require('bcrypt');
  */
 route.post('/register', async (req, res) => {
   try {
-    console.log(req.body);
     //generating the salts
     const salt = bcrypt.genSaltSync(10);
     //securing the password using bcrypt
@@ -48,7 +47,6 @@ route.post('/signIn', async (req, res) => {
     if (User) {
       //for comparing the secure password and User req password the password -- user security
       const valid = bcrypt.compareSync(req.body.password, User.password);
-      console.log(valid);
       if (!valid) {
         return res.status(400).json({
           status: 'Error',
@@ -73,7 +71,6 @@ route.post('/signIn', async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error);
     return res.status(400).json({
       status: 'Error',
       error: error,
