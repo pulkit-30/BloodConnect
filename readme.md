@@ -30,7 +30,7 @@ Open Terminal and run
 
 1. `git clone https://github.com/pulkit-30/BloodConnect.git`
 
-2. `cd BloodConnect.git`
+2. `cd BloodConnect`
 
 3. `npm install`
 
