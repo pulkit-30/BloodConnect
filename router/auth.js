@@ -26,7 +26,7 @@ route.post('/register', async (req, res) => {
     const Token = generateToken(newUser._id);
     await StoreToken(newUser._id, Token, newUser.email);
     const VerifyLink =
-      'http://localhost:8080/api/token/verify?token=' +
+      'https://pure-wildwood-48840.herokuapp.com/api/token/verify?token=' +
       Token +
       '&&email=' +
       req.body.email;
