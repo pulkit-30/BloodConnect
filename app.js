@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -9,9 +10,10 @@ db_connect();
 const search = require('./router/search');
 const auth = require('./router/auth');
 const message = require('./router/messages');
+const token = require('./router/token');
 
 app.get('/', (req, res) => {
-  res.send('Hello');
+  res.send('<h1>Hello!! This is backend API for blood Connect</h1>');
 });
 
 // App Routes
@@ -30,6 +32,11 @@ app.use('/api/search', search);
  * path : /api/message
  */
 app.use('/api/message', message);
+/**
+ * Token Verification
+ * path : /api/token
+ */
+app.use('/api/token', token);
 
 // App Listening
 const PORT = process.env.PORT || '8080';

@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 //defining the User Schema
 const UserSchema = new mongoose.Schema(
   {
+    isVerified: {
+      type: Boolean,
+      default: false,
+    },
     bloodGroup: {
       type: String,
     },

@@ -1,40 +1,67 @@
 require('dotenv').config();
 const route = require('express').Router();
-const Vonage = require('@vonage/server-sdk');
-const vonage = new Vonage({
-  apiKey: process.env.API_KEY,
-  apiSecret: process.env.API_SECRET,
-});
+const mailer = require('../utils/nodemailer');
 
-route.post('/send', (req, res) => {
+route.post('/mail', async (req, res) => {
   try {
-    const from = 'Blood Connect';
-    // enter a number
-    const to = '';
-    const text = `Hello! There is a urgent Blood request from Pulkit, It's your time to come forward and help him!
-    Please try to help!`;
-    vonage.message.sendSms(from, to, text, (err, responseData) => {
-      if (err) {
-        return res.status(400).json({
-          status: 'Error',
-          error: error,
-        });
-      } else {
-        if (responseData.messages[0]['status'] === '0') {
-          console.log('Message sent successfully.');
-        } else {
-          return res.status(400).json({
-            status: 'Error',
-            error: error,
-          });
-        }
-      }
+    // to the person
+    await mailer({
+      to: req.body.to.email,
+      subject: 'Urgent blood need !!!',
+      text: req.body.Message,
+      html: `
+      <center>
+      <h1>Blood Connect</h1>
+      <img src="https://user-images.githubusercontent.com/76155456/167152740-c65ab08b-ae0a-4fc0-9c6c-31a039e669d9.png" width='300px'/>
+
+      <p>Hello ${req.body.to.username},
+      There is an urgent need of blood If you are available please help us 🙏.
+      </p>
+      </center>
+      <div>
+      From:
+      <div>username: ${req.body.from.username}</div>
+      <div>email: ${req.body.from.email}</div>
+      <div>branch: ${req.body.from.branch}</div>
+      <div>course: ${req.body.from.course}</div>
+      <div>Admission Number: ${req.body.from.admissionNumber}</div>
+      <div>Contact: ${req.body.from.phoneNumber}</div>
+      </div>
+      `,
     });
-    res.status(200).json({
+
+    // confirmation mail to sender
+    await mailer({
+      to: req.body.from.email,
+      subject: 'Urgent Blood request send successfully ✅',
+      text: `Your Request has been send successfully to ${req.body.to.username}`,
+      html: `
+      <center>
+      <h1>Blood Connect</h1>
+      <img src="https://user-images.githubusercontent.com/76155456/167152740-c65ab08b-ae0a-4fc0-9c6c-31a039e669d9.png" width='300px'/>
+
+      <p>
+      Your Blood Request has been sent successfully ✅
+      </p>
+      </center>
+      <div>
+      To:
+      <div>username: ${req.body.to.username}</div>
+      <div>email: ${req.body.to.email}</div>
+      <div>branch: ${req.body.to.branch}</div>
+      <div>course: ${req.body.to.course}</div>
+      <div>Admission Number: ${req.body.to.admissionNumber}</div>
+      <div>Contact: ${req.body.to.phoneNumber}</div>
+      </div>
+      `,
+    });
+
+    return res.status(200).json({
       status: 'Success',
-      message: 'Message sent Successfully',
+      message: `Your Message has been sent successfully ✅`,
     });
   } catch (error) {
+    console.log(error);
     return res.status(400).json({
       status: 'Error',
       error: error,
