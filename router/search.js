@@ -11,9 +11,13 @@ route.get('/', async (req, res) => {
             error: { message: 'No User Found' },
           });
         } else {
+          let filter_data = [];
+          user.forEach((usr) => {
+            if (usr.isVerified) filter_data.push(usr);
+          });
           res.status(200).json({
             status: 'Success',
-            data: user,
+            data: filter_data,
           });
         }
       });
@@ -25,9 +29,13 @@ route.get('/', async (req, res) => {
             error: { message: 'No User Found' },
           });
         } else {
+          let filter_data = [];
+          user.forEach((usr) => {
+            if (usr.isVerified) filter_data.push(usr);
+          });
           res.status(200).json({
             status: 'Success',
-            data: user,
+            data: filter_data,
           });
         }
       });
