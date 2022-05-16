@@ -113,4 +113,24 @@ route.post('/signIn', async (req, res) => {
   }
 });
 
+route.get('/session', async (req, res) => {
+  try {
+    const User = await userModel.findOne({ email: req.query.email });
+    if (User && User.isVerified) {
+      //filtering the data
+      const { _id, password, ...other } = User._doc;
+
+      //send the response
+      return res.status(200).json({
+        status: 'Success',
+        data: other,
+      });
+    } else throw new Error('Session Expired!!');
+  } catch (error) {
+    return res.status(400).json({
+      status: 'Error',
+      error: error,
+    });
+  }
+});
 module.exports = route;
