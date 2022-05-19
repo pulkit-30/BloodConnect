@@ -18,6 +18,12 @@ Wish that no one needs this but in case as you know ideal things does not exist,
 ![1](https://user-images.githubusercontent.com/76155456/167236921-c31be9b0-4ba8-4c2f-982f-42b59ec62e2b.png)
 
 ---
+## Presentaion
+
+[Idea Presentation -College (2).pdf](https://github.com/pulkit-30/BloodConnect/files/8730287/Idea.Presentation.-College.2.pdf)
+
+
+---
 
 ## Setup
 
