@@ -8,6 +8,8 @@ const { generateToken, StoreToken } = require('../utils/Token');
  * Register Route
  * Callback function - args: req & res
  * Create new user and return user data
+ * path: api/auth/register
+ * method: post
  */
 route.post('/register', async (req, res) => {
   try {
@@ -68,6 +70,8 @@ route.post('/register', async (req, res) => {
  * SignIn Route
  * Callback function - args: req & res
  * find user with email and return user data
+ * path: api/auth/signIn
+ * method: post
  */
 route.post('/signIn', async (req, res) => {
   try {
@@ -118,7 +122,7 @@ route.get('/session', async (req, res) => {
     const User = await userModel.findOne({ email: req.query.email });
     if (User && User.isVerified) {
       //filtering the data
-      const { _id, password, ...other } = User._doc;
+      const { password, ...other } = User._doc;
 
       //send the response
       return res.status(200).json({

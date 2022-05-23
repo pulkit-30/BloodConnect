@@ -2,6 +2,11 @@ require('dotenv').config();
 const route = require('express').Router();
 const mailer = require('../utils/nodemailer');
 
+/**
+ * To send Mails
+ * path: api/message/mail
+ * method: post
+ */
 route.post('/mail', async (req, res) => {
   try {
     // to the person

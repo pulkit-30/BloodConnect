@@ -5,6 +5,7 @@ const UserModel = require('../models/user');
 /**
  * To authenticate token
  * path: /api/token/verify?token=""?email=""
+ * method: get
  */
 route.get('/verify', async (req, res) => {
   try {

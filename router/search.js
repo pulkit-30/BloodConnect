@@ -1,15 +1,19 @@
 const route = require('express').Router();
 const userModel = require('../models/user');
 const main = require('../utils/nodemailer');
+
+/**
+ * Search data
+ * path: api/search/
+ * queries: bg --  bloodGroup
+ * method: get
+ */
 route.get('/', async (req, res) => {
   try {
     if (req.query.bg) {
       userModel.find({ bloodGroup: req.query.bg }, (err, user) => {
         if (err) {
-          return res.status(400).json({
-            status: 'Error',
-            error: { message: 'No User Found' },
-          });
+          throw new Error('No User Found');
         } else {
           let filter_data = [];
           user.forEach((usr) => {
@@ -24,10 +28,8 @@ route.get('/', async (req, res) => {
     } else {
       userModel.find({}, (err, user) => {
         if (err) {
-          return res.status(400).json({
-            status: 'Error',
-            error: { message: 'No User Found' },
-          });
+          throw new Error('No User Found');
+          return;
         } else {
           let filter_data = [];
           user.forEach((usr) => {
