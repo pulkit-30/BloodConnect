@@ -28,6 +28,7 @@ route.put('/update/:id', async (req, res) => {
       });
     } else throw new Error('You cannot update this account!!');
   } catch (error) {
+    console.log(error);
     return res.status(400).json({
       status: 'Error',
       error: error,
@@ -41,7 +42,6 @@ route.put('/update/:id', async (req, res) => {
  * method: delete
  */
 route.delete('/delete/:id', async (req, res) => {
-  console.log('Hello');
   try {
     await UserModel.findByIdAndDelete(req.params.id, () => {
       return res.status(200).json({

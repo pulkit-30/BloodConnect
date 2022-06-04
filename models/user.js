@@ -35,6 +35,22 @@ const UserSchema = new mongoose.Schema(
     admissionNumber: {
       type: String,
     },
+    college: {
+      type: String,
+      default: 'N.A',
+    },
+    city: {
+      type: String,
+      default: 'N.A',
+    },
+    state: {
+      type: String,
+      default: 'N.A',
+    },
+    declaration: {
+      type: String,
+      default: 'Hereby I confirm that I am 18+ and Eligible for blood donation',
+    },
   },
   { timestamps: true }
 );

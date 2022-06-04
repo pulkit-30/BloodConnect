@@ -4,6 +4,8 @@
   "description": "this is backend server for club_zone",
   "main": "app.js",
   "scripts": {
+    "up":"docker-compose up",
+    "down":"docker-compose down",
     "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

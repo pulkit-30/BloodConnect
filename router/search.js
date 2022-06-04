@@ -29,9 +29,9 @@ route.get('/', async (req, res) => {
       userModel.find({}, (err, user) => {
         if (err) {
           throw new Error('No User Found');
-          return;
         } else {
           let filter_data = [];
+          user.reverse();
           user.forEach((usr) => {
             if (usr.isVerified) filter_data.push(usr);
           });

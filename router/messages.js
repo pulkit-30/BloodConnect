@@ -53,10 +53,7 @@ route.post('/mail', async (req, res) => {
       To:
       <div>username: ${req.body.to.username}</div>
       <div>email: ${req.body.to.email}</div>
-      <div>branch: ${req.body.to.branch}</div>
       <div>course: ${req.body.to.course}</div>
-      <div>Admission Number: ${req.body.to.admissionNumber}</div>
-      <div>Contact: ${req.body.to.phoneNumber}</div>
       </div>
       `,
     });

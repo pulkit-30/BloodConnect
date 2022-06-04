@@ -58,7 +58,7 @@ app.use('/api/message', message);
 app.use('/api/token', token);
 
 // Server Listening
-const PORT = process.env.PORT || '8080';
+const PORT = process.env.PORT || '80';
 app.listen(PORT, () => {
   console.log('server is running at port : ', PORT);
 });
