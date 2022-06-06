@@ -1,9 +1,6 @@
-<div align="center">
-  
-  # Blood Connect : <span style="color:green">The Gift of Life</span>
+![1](https://user-images.githubusercontent.com/76155456/167236921-c31be9b0-4ba8-4c2f-982f-42b59ec62e2b.png)
 
-<img src="https://user-images.githubusercontent.com/76155456/167152740-c65ab08b-ae0a-4fc0-9c6c-31a039e669d9.png" width="400px" />
-</div>
+# Blood Connect : <span style="color:green">The Gift of Life</span>
 
 ## Problem Statement
 
@@ -15,19 +12,42 @@ And hence BloodConnect is developed.
 BloodConnect is an initiative which can help you in finding a person who has the blood group that you need and can really help you in times when someone who wants to, can’t.
 Wish that no one needs this but in case as you know ideal things does not exist, if anyone needs ,you can be very helpful to that anyone.
 
-![1](https://user-images.githubusercontent.com/76155456/167236921-c31be9b0-4ba8-4c2f-982f-42b59ec62e2b.png)
+---
+
+## Setup
+
+![Poster](https://user-images.githubusercontent.com/76155456/167236926-956da010-ab7b-4749-86c1-cc943959ca33.png)
+
+## Steps to SetUp
+
+Open Terminal and run
+
+1.  `git clone https://github.com/pulkit-30/BloodConnect.git`
+
+2.  `cd BloodConnect`
+
+3.  `npm install`
+
+4.  `npm start`
+
+5.  `git submodule init`
+
+6.  `git submodule update`
+
+7.  `cd Technovation-Hackathon`
+
+8.  `yarn`
+
+9.  `npm start`
+
+#### Add `.env` file or change name of `.env.example` to `.env` and required information init
+
+#### That's it , your project has been setup successfully 🥳
 
 ---
 ## Presentaion
 
 [Idea Presentation -College (2).pdf](https://github.com/pulkit-30/BloodConnect/files/8730287/Idea.Presentation.-College.2.pdf)
-
-
----
-
-## Setup
-
-#### See [`setup.md`](https://github.com/pulkit-30/BloodConnect/blob/master/setup.md) for setting up Blood Connect.
 
 ---
 
