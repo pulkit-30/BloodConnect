@@ -1,6 +1,6 @@
 ![1](https://user-images.githubusercontent.com/76155456/167236921-c31be9b0-4ba8-4c2f-982f-42b59ec62e2b.png)
 
-# Blood Connect : <span style="color:green">The Gift of Life</span>
+# Blood Connect : <span style="color:green">The Gift to Life</span>
 
 ## Problem Statement
 
@@ -18,7 +18,7 @@ Wish that no one needs this but in case as you know ideal things does not exist,
 
 ![Poster](https://user-images.githubusercontent.com/76155456/167236926-956da010-ab7b-4749-86c1-cc943959ca33.png)
 
-## Steps to SetUp
+#### Steps to SetUp
 
 Open Terminal and run
 
@@ -45,6 +45,7 @@ Open Terminal and run
 #### That's it , your project has been setup successfully 🥳
 
 ---
+
 ## Presentaion
 
 [Idea Presentation -College (2).pdf](https://github.com/pulkit-30/BloodConnect/files/8730287/Idea.Presentation.-College.2.pdf)
