@@ -13,6 +13,12 @@ BloodConnect is an initiative which can help you in finding a person who has the
 Wish that no one needs this but in case as you know ideal things does not exist, if anyone needs ,you can be very helpful to that anyone.
 
 ---
+## WorkFlow
+
+![Untitled document](https://user-images.githubusercontent.com/76155456/172639382-3f833783-8f83-4186-9981-03b6f176fa94.jpg)
+
+
+---
 
 ## Setup
 
