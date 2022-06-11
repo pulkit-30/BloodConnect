@@ -43,11 +43,10 @@ route.put('/update/:id', async (req, res) => {
  */
 route.delete('/delete/:id', async (req, res) => {
   try {
-    await UserModel.findByIdAndDelete(req.params.id, () => {
-      return res.status(200).json({
-        status: 'Success',
-        message: 'Account Deleted Successfully',
-      });
+    await UserModel.findByIdAndDelete(req.params.id);
+    return res.status(200).json({
+      status: 'Success',
+      message: 'Account Deleted Successfully',
     });
   } catch (error) {
     console.log(error);
