@@ -52,9 +52,9 @@ Open Terminal and run
 
 ---
 
-## Presentaion
+## Presentation
 
-[Idea Presentation -College (2).pdf](https://github.com/pulkit-30/BloodConnect/files/8730287/Idea.Presentation.-College.2.pdf)
+[Idea Presentation](https://he-s3.s3.amazonaws.com/media/sprint/hackforgood-grab-hackathon-2022/team/1503052/5c99250_blood_connect_final.pdf)
 
 ---
 
