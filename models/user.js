@@ -29,12 +29,6 @@ const UserSchema = new mongoose.Schema(
     branch: {
       type: String,
     },
-    phoneNumber: {
-      type: String,
-    },
-    admissionNumber: {
-      type: String,
-    },
     college: {
       type: String,
       default: 'N.A',
@@ -46,6 +40,18 @@ const UserSchema = new mongoose.Schema(
     state: {
       type: String,
       default: 'N.A',
+    },
+    permanentLocation: {
+      type: Object,
+      default: {},
+    },
+    currentLocation: {
+      type: Object,
+      default: {},
+    },
+    LastLocation: {
+      type: Object,
+      default: {},
     },
     declaration: {
       type: String,
