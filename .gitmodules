@@ -1,3 +1,3 @@
-[submodule "Technovation-Hackathon"]
-	path = Technovation-Hackathon
-	url = https://github.com/pulkit-30/Technovation-Hackathon.git
+[submodule "blood-connect-frontend"]
+	path = blood-connect-frontend
+	url = https://github.com/pulkit-30/blood-connect-frontend.git
