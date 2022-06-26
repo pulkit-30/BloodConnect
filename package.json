@@ -1,7 +1,7 @@
 {
-  "name": "club_zone",
+  "name": "blood-connect",
   "version": "1.0.0",
-  "description": "this is backend server for club_zone",
+  "description": "this is backend server for blood-connect",
   "main": "app.js",
   "scripts": {
     "up": "docker-compose up",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pulkit-30/club_zone.git"
+    "url": "git+https://github.com/pulkit-30/BloodConnect.git"
   },
   "author": "Pulkit",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pulkit-30/club_zone/issues"
+    "url": "https://github.com/pulkit-30/BloodConnect/issues"
   },
-  "homepage": "https://github.com/pulkit-30/club_zone#readme",
+  "homepage": "https://github.com/pulkit-30/BloodConnect#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
