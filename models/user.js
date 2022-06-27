@@ -9,6 +9,9 @@ const UserSchema = new mongoose.Schema(
     bloodGroup: {
       type: String,
     },
+    age: {
+      type: String,
+    },
     username: {
       type: String,
       required: false,
