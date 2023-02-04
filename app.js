@@ -9,8 +9,6 @@ app.use(cors());
 
 // DB_connection
 const db_connect = require('./connection/db_connect');
-db_connect();
-
 const search = require('./router/search');
 const auth = require('./router/auth');
 const message = require('./router/messages');
@@ -59,6 +57,8 @@ app.use('/api/token', token);
 
 // Server Listening
 const PORT = process.env.PORT || '80';
-app.listen(PORT, () => {
-  console.log('server is running at port : ', PORT);
+db_connect().finally(() => {
+  app.listen(PORT, () => {
+    console.log('server is running at port : ', PORT);
+  });
 });
