@@ -19,43 +19,44 @@ route.post('/register', async (req, res) => {
     const HashedPassword = bcrypt.hashSync(req.body.password, salt);
     // creating new User
     req.body.password = HashedPassword;
+    req.body.isVerified = true;
     const newUser = await new userModel(req.body);
     await newUser.save();
 
-    /**
-     * Generate Token
-     */
-    const Token = generateToken(newUser._id);
-    await StoreToken(newUser._id, Token, newUser.email);
-    const VerifyLink =
-      'https://pure-wildwood-48840.herokuapp.com/api/token/verify?token=' +
-      Token +
-      '&&email=' +
-      req.body.email;
+    // /**
+    //  * Generate Token
+    //  */
+    // const Token = generateToken(newUser._id);
+    // await StoreToken(newUser._id, Token, newUser.email);
+    // const VerifyLink =
+    //   'https://pure-wildwood-48840.herokuapp.com/api/token/verify?token=' +
+    //   Token +
+    //   '&&email=' +
+    //   req.body.email;
 
-    /**
-     * Send Email Verification
-     * from, to, subject, text, message, html
-     */
-    mailer({
-      to: req.body.email,
-      subject: 'Email Verification ✅',
-      text: 'Please verify your Email',
-      html: `
-      <center>
-      <h1>Blood Connect</h1>
-      <img src="https://user-images.githubusercontent.com/76155456/167152740-c65ab08b-ae0a-4fc0-9c6c-31a039e669d9.png" width='300px'/>
-      <p>Please verify your Email</p>
-      <span>To verify your Email click here 👉</span>
-      <a href=${VerifyLink}><button>Verify</button></a>
-      </center>
-      `,
-    });
+    // /**
+    //  * Send Email Verification
+    //  * from, to, subject, text, message, html
+    //  */
+    // mailer({
+    //   to: req.body.email,
+    //   subject: 'Email Verification ✅',
+    //   text: 'Please verify your Email',
+    //   html: `
+    //   <center>
+    //   <h1>Blood Connect</h1>
+    //   <img src="https://user-images.githubusercontent.com/76155456/167152740-c65ab08b-ae0a-4fc0-9c6c-31a039e669d9.png" width='300px'/>
+    //   <p>Please verify your Email</p>
+    //   <span>To verify your Email click here 👉</span>
+    //   <a href=${VerifyLink}><button>Verify</button></a>
+    //   </center>
+    //   `,
+    // });
 
     return res.status(200).json({
       status: 'Success',
       message:
-        'Email verification has been sent to your mail ,Please check your mail !!!',
+        'User Registered Successfully',
     });
   } catch (error) {
     console.log(error);

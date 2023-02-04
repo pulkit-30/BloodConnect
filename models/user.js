@@ -26,16 +26,6 @@ const UserSchema = new mongoose.Schema(
       required: true,
       minlength: 8,
     },
-    course: {
-      type: String,
-    },
-    branch: {
-      type: String,
-    },
-    college: {
-      type: String,
-      default: 'N.A',
-    },
     city: {
       type: String,
       default: 'N.A',
@@ -47,6 +37,10 @@ const UserSchema = new mongoose.Schema(
     permanentLocation: {
       type: Object,
       default: {},
+    },
+    country: {
+      type: String,
+      default: 'India',
     },
     currentLocation: {
       type: Object,

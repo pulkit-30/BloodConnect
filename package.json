@@ -4,10 +4,7 @@
   "description": "this is backend server for blood-connect",
   "main": "app.js",
   "scripts": {
-    "up": "docker-compose up",
-    "down": "docker-compose down",
-    "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -29,8 +26,5 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
-  },
-  "engines": {
-    "node": "14.18.0"
   }
 }
